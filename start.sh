@@ -6,7 +6,7 @@ _get_ziplink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "jepthoniq" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2plcHRob25pcS9Kb2tlck11c2ljL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL3hsdWNpZmVyNzExL0pva2VyTXVzaWMvYXJjaGl2ZS9tYWluLnppcA==" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
@@ -16,7 +16,7 @@ _get_ziplink () {
             echo "${UPSTREAM_REPO}/archive/main.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL2plcHRob25pcS9Kb2tlck11c2ljL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL3hsdWNpZmVyNzExL0pva2VyTXVzaWMvYXJjaGl2ZS9tYWluLnppcA==" | base64 -d
     fi
 }
 
@@ -26,12 +26,12 @@ _get_repolink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "jepthoniq" ]]
     then
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2plcHRob25pcS9Kb2tlck11c2ljLmdpdA==" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL3hsdWNpZmVyNzExL0pva2VyTXVzaWMuZ2l0" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2plcHRob25pcS9Kb2tlck11c2ljLmdpdA==" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL3hsdWNpZmVyNzExL0pva2VyTXVzaWMuZ2l0" | base64 -d`
     fi
     echo "$rlink"
 }
@@ -44,7 +44,7 @@ _run_python_code() {
 _run_catpack_git() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/jepthoniq/JokerMusic"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/xlucifer711/JokerMusic"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
@@ -83,7 +83,7 @@ _set_bot () {
     _run_cat_git
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "    بدء تنزيل بيانات الجوكر    "
+    echo "    بدء تنزيل بيانات سورس الشيطان    "
     echo "
 
     "
